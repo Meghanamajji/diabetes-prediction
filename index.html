@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🩺 Diabetes Prediction</h1>
+        <form id="diabetes-form">
+            <input type="number" name="Pregnancies" placeholder="Pregnancies" required>
+            <input type="number" name="Glucose" placeholder="Glucose" required>
+            <input type="number" name="BloodPressure" placeholder="Blood Pressure" required>
+            <input type="number" name="SkinThickness" placeholder="Skin Thickness" required>
+            <input type="number" name="Insulin" placeholder="Insulin" required>
+            <input type="number" step="any" name="BMI" placeholder="BMI" required>
+            <input type="number" step="any" name="DiabetesPedigreeFunction" placeholder="DPF" required>
+            <input type="number" name="Age" placeholder="Age" required>
+            <button type="submit">Predict</button>
+        </form>
+
+        <div id="loader" style="display:none;">🔄 Predicting...</div>
+        <div id="result"></div>
+        <canvas id="probChart" style="margin-top: 30px;"></canvas>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
